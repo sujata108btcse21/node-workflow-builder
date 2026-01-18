@@ -1,0 +1,201 @@
+/* Enhanced Styling for Assessment */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    margin: 0;
+    min-height: 100vh;
+    overflow: hidden;
+  }
+  
+  /* React Flow Custom Styling */
+  .react-flow {
+    --bg-color: #ffffff;
+    --text-color: #1e293b;
+    --node-border-radius: 8px;
+    --node-box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    --node-hover-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    --handle-size: 12px;
+    --edge-stroke-width: 2px;
+    --edge-stroke-color: #667eea;
+  }
+  
+  .react-flow__node {
+    box-shadow: var(--node-box-shadow);
+    border-radius: var(--node-border-radius);
+    border: 2px solid transparent;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: white;
+  }
+  
+  .react-flow__node:hover {
+    box-shadow: var(--node-hover-shadow);
+    transform: translateY(-2px);
+  }
+  
+  .react-flow__node.selected {
+    border-color: #667eea !important;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1), var(--node-hover-shadow);
+  }
+  
+  .react-flow__handle {
+    width: var(--handle-size);
+    height: var(--handle-size);
+    background: white;
+    border: 2px solid currentColor;
+    transition: all 0.2s;
+  }
+  
+  .react-flow__handle:hover {
+    transform: scale(1.2);
+    border-width: 3px;
+  }
+  
+  .react-flow__handle.source {
+    color: var(--edge-stroke-color);
+  }
+  
+  .react-flow__handle.target {
+    color: #10b981;
+  }
+  
+  .react-flow__edge-path {
+    stroke: var(--edge-stroke-color);
+    stroke-width: var(--edge-stroke-width);
+    stroke-linecap: round;
+  }
+  
+  .react-flow__edge.animated path {
+    stroke-dasharray: 8;
+    animation: dashdraw 0.5s linear infinite;
+    stroke-linecap: round;
+  }
+  
+  .react-flow__edge.selected .react-flow__edge-path {
+    stroke: #f59e0b;
+    stroke-width: 3px;
+  }
+  
+  @keyframes dashdraw {
+    from {
+      stroke-dashoffset: 16;
+    }
+  }
+  
+  .react-flow__controls {
+    box-shadow: var(--node-box-shadow) !important;
+    border-radius: 8px !important;
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+  }
+  
+  .react-flow__controls-button {
+    border: none !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+    background: white !important;
+  }
+  
+  .react-flow__controls-button:hover {
+    background: #f8fafc !important;
+  }
+  
+  .react-flow__controls-button svg {
+    fill: #64748b;
+  }
+  
+  .react-flow__minimap {
+    background: white;
+    border-radius: 8px;
+    box-shadow: var(--node-box-shadow);
+    border: 1px solid #e2e8f0;
+  }
+  
+  .react-flow__background {
+    background-color: #f8fafc;
+  }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f1f5f9;
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+  }
+  
+  /* Animations */
+  @keyframes pulse {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.7;
+    }
+  }
+  
+  .pulse {
+    animation: pulse 2s infinite;
+  }
+  
+  /* Node type indicators */
+  .node-type-badge {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    font-weight: bold;
+    color: white;
+    z-index: 10;
+  }
+  
+  /* Connection line styling */
+  .react-flow__connectionline {
+    z-index: 1000;
+  }
+  
+  .react-flow__connection-path {
+    stroke: #f59e0b;
+    stroke-width: 2;
+  }
+  
+  /* Selection box */
+  .react-flow__selection {
+    background: rgba(102, 126, 234, 0.1);
+    border: 1px solid rgba(102, 126, 234, 0.3);
+    border-radius: 4px;
+  }
+  
+  /* Edge label */
+  .react-flow__edge-textbg {
+    fill: white;
+    stroke: #e2e8f0;
+    stroke-width: 1;
+  }
+  
+  .react-flow__edge-text {
+    fill: #475569;
+    font-size: 10px;
+    font-weight: 500;
+  }
